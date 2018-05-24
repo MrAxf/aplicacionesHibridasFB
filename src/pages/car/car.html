@@ -1,0 +1,21 @@
+<!--
+  Generated template for the CarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title *ngIf="car">{{car.marca}} {{car.modelo}}</ion-title> 
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item *ngIf="car"> 
+    <h1>{{car.marca}} {{car.modelo}}</h1>
+    <h3>Potencia: {{car.potencia}} CV</h3>
+    <h3>Velocidad máxima: {{car.velocidadMaxima}}</h3>
+    <p>País de origen: {{car.fabricacion}}</p>
+  </ion-item>
+</ion-content>
