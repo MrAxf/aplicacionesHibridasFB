@@ -14,6 +14,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { CarPage } from '../pages/car/car';
+import { AddCarPage } from '../pages/add-car/add-car';
 
 export const config = {
   apiKey: "AIzaSyAWvIE3h7LipDW5TNM3rwHV5DNiwga6xXI",
@@ -28,7 +29,8 @@ export const config = {
   declarations: [
     MyApp,
     HomePage,
-    CarPage
+    CarPage,
+    AddCarPage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ export const config = {
   entryComponents: [
     MyApp,
     HomePage,
-    CarPage
+    CarPage,
+    AddCarPage
   ],
   providers: [
     StatusBar,

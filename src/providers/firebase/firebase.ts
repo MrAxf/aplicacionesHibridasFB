@@ -39,4 +39,15 @@ export class FirebaseProvider {
     return this.car;
   }
 
+  deleteCar(id){
+    this.db.doc<Car>('cars/'+id).delete()
+      .then( () => console.log("Objeto borrado"))
+      .catch( err => console.error(err));
+  }
+  addCar(car: Car){
+    this.db.doc<Car>('cars').set(car)
+    .then( () => console.log("Objeto creado"))
+    .catch( err => console.error(err));
+  }
+
 }
