@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { AngularFireModule } from 'angularfire2'; 
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import { HttpClientModule } from '@angular/common/http';
 
 import { FirebaseProvider } from '../providers/firebase/firebase';
@@ -37,7 +38,8 @@ export const config = {
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(config, 'cars'), 
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -51,7 +53,8 @@ export const config = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     FirebaseProvider,
-    AngularFirestore
+    AngularFirestore,
+    AngularFireAuth
   ]
 })
 export class AppModule {}

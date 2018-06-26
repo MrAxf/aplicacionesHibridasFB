@@ -3,6 +3,14 @@
     <ion-title>
       Coches
     </ion-title>
+    <ion-buttons end>
+      <button *ngIf="!(afAuth.authState | async)" ion-button icon-only (click)="login();">
+        <ion-icon name="logo-google"></ion-icon>
+      </button>
+      <button *ngIf="(afAuth.authState | async)" ion-button icon-only (click)="logout();">
+        <ion-icon name="exit"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -20,7 +28,7 @@
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
-  <ion-fab right bottom>
+  <ion-fab right bottom *ngIf="(afAuth.authState | async)">
     <button ion-fab color = "danger" (click)="addCar()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 </ion-content>

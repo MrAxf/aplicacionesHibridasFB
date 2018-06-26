@@ -49,5 +49,4 @@ export class AddCarPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddCarPage');
   }
-
 }
