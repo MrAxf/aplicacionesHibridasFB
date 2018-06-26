@@ -45,9 +45,6 @@ export class FirebaseProvider {
       .catch( err => console.error(err));
   }
   addCar(car: Car){
-    this.db.doc<Car>('cars').set(car)
-    .then( () => console.log("Objeto creado"))
-    .catch( err => console.error(err));
+    return this.db.collection('cars').add(car);
   }
-
 }
